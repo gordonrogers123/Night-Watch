@@ -47,17 +47,26 @@
     <!--Body of Website-->
     <div class="main-content">
         <div class="parent">
-            <div class="tracker-grid" id="div2">2 </div>
             <div class="tracker-grid" id="div1">1 </div>
+			<div class="tracker-grid" id="div2">
+				<div id="div2-parent">
+					<div id="div2-1"><h2>UAP Tracker</h2></div>
+					<div id="div2-2"><p>&#8226</p></div>
+					<div id="div2-3"><h2>Status Active</h2></div>
+					</div>
+			</div>
             <div class="tracker-grid" id="div3">3 </div>
-            <div class="tracker-grid" id="div4">4 </div>
+            <div class="tracker-grid" id="div4">
+				<img id="hud" src="img/hud1.png" alt="hud">
+				<div class="anomaly"></div>
+			</div>
             <div class="meter-1"></div>
             <div class="div5-grid" id="div5">
-                <div class="div5-inner" id="div5-1">0.1kph </div>
-                <div class="div5-inner" id="div5-2">1kph </div>
-                <div class="div5-inner" id="div5-3">10kph </div>
-                <div class="div5-inner" id="div5-4">100kph </div>
-                <div class="div5-inner" id="div5-5">1000kph </div>
+                <div class="div5-inner" id="div5-1">1 kph </div>
+                <div class="div5-inner" id="div5-2">10 kph </div>
+                <div class="div5-inner" id="div5-3">100 kph </div>
+                <div class="div5-inner" id="div5-4">1,000 kph </div>
+                <div class="div5-inner" id="div5-5">10,000 kph </div>
             </div>
             <div class="tracker-grid" id="div6">
 				<img id="waveform" src="img/wav.png" alt="waveform">
@@ -73,13 +82,32 @@
             <div class="tracker-grid" id="div10">
                 <div class="meter-4"></div>
             </div>
-            <div class="tracker-grid" id="div11">11 </div>
+            <div class="tracker-grid" id="div11">
+				<div id=div11-parent>
+					<div id="div11-1"> </div>
+					<div id="div11-2"> </div>
+					<div id="div11-3"> </div>
+					<div id="div11-4"> </div>
+					<div id="div11-5"> </div>
+				</div>
+			</div>
             <div class="tracker-grid" id="div12">
                 <p id="time-text">Tracking Time:</p>
                 <p id="timer"></p>
             </div>
-            <div class="tracker-grid" id="div13">13 </div>
-            <div class="tracker-grid" id="div14">14 </div>
+            <div class="tracker-grid" id="div13">
+				<img id="grid" src="img/grid.png" alt="grid">
+				<img id="ship" src="img/ship.png" alt="ship">
+			</div>
+            <div class="tracker-grid" id="div14">
+				<h2>System Information:</h2>
+				<p>// Threat Class: Euclid</p>
+				<p>// Temperature >> &#9 <em id="temp">5&#176 C</em></p>
+				<p>// Energy Signature >> <em id="energy">Fusion Core</em></p>
+				<p>// Life Signs >> Unknown</p>
+				<p id="weapons"><< Weapon Systems Detected >></p>
+
+			</div>
         </div>
 
     </div>
