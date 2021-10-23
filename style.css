@@ -855,7 +855,7 @@ nav>ul {
 	box-shadow: .25vw .25vw 0vw purple;
 	position: relative;
 	margin: auto;
-	animation: square-to-circle 30s infinite cubic-bezier(0.165, 0.84, 0.44, 1) alternate-reverse;
+	animation: square-to-circle 60s infinite cubic-bezier(0.165, 0.84, 0.44, 1) alternate-reverse;
 }
 
 #div11-2 { 
@@ -866,7 +866,7 @@ nav>ul {
 	box-shadow: .25vw .25vw 0vw purple;
 	position: relative;
 	margin: auto;
-	animation: square-to-circle2 30s infinite cubic-bezier(0.25, 0.46, 0.45, 0.94) alternate-reverse;
+	animation: square-to-circle2 45s infinite cubic-bezier(0.25, 0.46, 0.45, 0.94) alternate-reverse;
 }
 
 #div11-3 { 
@@ -878,7 +878,7 @@ nav>ul {
 	box-shadow: .25vw .25vw 0vw purple;
 	position: relative;
 	margin: auto;
-	animation: square-to-circle 35s infinite cubic-bezier(0.455, 0.03, 0.515, 0.955) alternate-reverse;
+	animation: square-to-circle 30s infinite cubic-bezier(0.455, 0.03, 0.515, 0.955) alternate-reverse;
 }
 
 #div11-4 { 
@@ -889,7 +889,7 @@ nav>ul {
 	box-shadow: .25vw .25vw 0vw purple;
 	position: relative;
 	margin: auto;
-	animation: square-to-circle3 30s infinite cubic-bezier(0.215, 0.610, 0.355, 1) alternate-reverse;
+	animation: square-to-circle3 10s infinite cubic-bezier(0.215, 0.610, 0.355, 1) alternate-reverse;
 }
 
 #div11-5 { 
@@ -900,7 +900,7 @@ nav>ul {
 	box-shadow: .25vw .25vw 0vw purple;
 	position: relative;
 	margin: auto;
-	animation: square-to-circle2 35s infinite cubic-bezier(1,.015,.295,1.225) alternate-reverse;
+	animation: square-to-circle2 5s infinite cubic-bezier(1,.015,.295,1.225) alternate-reverse;
 }
 
 @keyframes square-to-circle {
@@ -1214,7 +1214,7 @@ nav>ul {
 	font-size: 2.8vw;
 	color: greenyellow;
 	margin-bottom: .2vw;
-	margin-top: 1.5vw;
+	margin-top: 1vw;
 }
 
 #temp{
@@ -1230,6 +1230,7 @@ nav>ul {
 	font-size: 1.4vw;
 
 	padding-left: 0.5vw;
+	margin-bottom: 1vw;
 	text-align: left;
 	animation-name: weapons;
 	animation-timing-function: linear;
