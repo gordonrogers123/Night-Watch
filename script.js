@@ -1,17 +1,21 @@
 /* Toggle between showing and hiding the navigation menu links when the user clicks on the hamburger menu / bar icon */
 function navExpand() {
     var x = document.getElementById("nav-link-list");
-
+    var y = document.getElementById("bars");
     if (x.style.display === "flex") {
         x.style.display = "none";
+        y.classList.remove("fa-times")
+        y.classList.add("fa-bars");
     } else {
         x.style.display = "flex";
+        y.classList.remove("fa-bars")
+        y.classList.add("fa-times");
     }
 }
 
 
 // Set the date we're counting down to
-var countDownDate = new Date("Oct 19, 2021 15:37:25").getTime();
+var countUpDate = new Date("Oct 19, 2021 15:37:25").getTime();
 
 // Update the count down every 1 second
 var x = setInterval(function() {
@@ -20,7 +24,7 @@ var x = setInterval(function() {
     var now = new Date().getTime();
 
     // Find the distance between now and the count down date
-    var distance = now - countDownDate;
+    var distance = now - countUpDate;
 
     // Time calculations for days, hours, minutes and seconds
     var days = Math.floor(distance / (1000 * 60 * 60 * 24));
@@ -31,10 +35,23 @@ var x = setInterval(function() {
     // Display the result in the element with id="timer"
     document.getElementById("timer").innerHTML = days + "d : " + hours + "h : " +
         minutes + "m : " + seconds + "s";
-
-    // If the count down is finished, write some text
-    if (distance < 0) {
-        clearInterval(x);
-        document.getElementById("timer").innerHTML = "EXPIRED";
-    }
 }, 1000);
+
+
+// When the user scrolls the page, execute myFunction
+window.onscroll = function() { myFunction() };
+
+// Get the navbar
+var navbar = document.getElementsById("nav-bar");
+
+// Get the offset position of the navbar
+var sticky = navbar.offsetTop;
+
+// Add the sticky class to the navbar when you reach its scroll position. Remove "sticky" when you leave the scroll position
+function myFunction() {
+    if (window.pageYOffset >= sticky) {
+        navbar.classList.add("sticky")
+    } else {
+        navbar.classList.remove("sticky");
+    }
+}

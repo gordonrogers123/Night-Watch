@@ -1,0 +1,30 @@
+/* (A) GUEST BOOK ENTRIES */
+
+.gb-row {
+    background: #f5f5f5;
+    border: 1px solid #ddd;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+.gb-datetime {
+    color: #888;
+    font-size: 0.9em;
+    padding: 5px 0;
+}
+
+.gb-name {
+    font-weight: bold;
+    font-size: 1.2em;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 10px;
+}
+
+.gb-name-a {
+    text-transform: uppercase;
+    color: #c32525;
+}
+
+.gb-comment {
+    padding-top: 10px;
+}

@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://use.typekit.net/nbf7xef.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://kit.fontawesome.com/4e854f99b8.js" crossorigin="anonymous"></script>
     <script src=script.js></script>
     <title>The Night Watch</title>
 </head>
@@ -25,7 +25,7 @@
             <div class="nav-icon">
                 <!-- "Hamburger menu" / "Bar icon" to toggle the navigation links -->
                 <a href="javascript:void(0);" class="icon" onclick="navExpand()">
-                    <i class="fa fa-bars"></i>
+                    <i class="fas fa-bars" id="bars"></i>
                 </a>
             </div>
             <ul id="nav-link-list">
@@ -48,22 +48,28 @@
     <div class="main-content">
         <div class="parent">
             <div class="tracker-grid" id="div1">
-				<img id="active" src="img/active.png" alt="active">
-			</div>
-			<div class="tracker-grid" id="div2">
-				<div id="div2-parent">
-					<div id="div2-1"><h2>UFO Tracker</h2></div>
-					<div id="div2-2"><p>&#8226</p></div>
-					<div id="div2-3"><h2>Status Active</h2></div>
-					</div>
-			</div>
+                <img id="active" src="img/active.png" alt="active">
+            </div>
+            <div class="tracker-grid" id="div2">
+                <div id="div2-parent">
+                    <div id="div2-1">
+                        <h2>UFO Tracker</h2>
+                    </div>
+                    <div id="div2-2">
+                        <p>&#8226</p>
+                    </div>
+                    <div id="div2-3">
+                        <h2>Status Active</h2>
+                    </div>
+                </div>
+            </div>
             <div class="tracker-grid" id="div3">
-				<img id="audio" src="img/audio.png" alt="audio">
-			</div>
+                <img id="audio" src="img/audio.png" alt="audio">
+            </div>
             <div class="tracker-grid" id="div4">
-				<img id="hud" src="img/hud1.png" alt="hud">
-				<div class="anomaly"></div>
-			</div>
+                <img id="hud" src="img/hud1.png" alt="hud">
+                <div class="anomaly"></div>
+            </div>
             <div class="meter-1"></div>
             <div class="div5-grid" id="div5">
                 <div class="div5-inner" id="div5-1">1 kph </div>
@@ -73,9 +79,9 @@
                 <div class="div5-inner" id="div5-5">10,000 kph </div>
             </div>
             <div class="tracker-grid" id="div6">
-				<img id="waveform" src="img/wav.png" alt="waveform">
-				<div class="meter-5"></div>
-			</div>
+                <img id="waveform" src="img/wav.png" alt="waveform">
+                <div class="meter-5"></div>
+            </div>
             <div class="tracker-grid" id="div7">7 </div>
             <div class="tracker-grid" id="div8">
                 <div class="meter-2"></div>
@@ -87,31 +93,32 @@
                 <div class="meter-4"></div>
             </div>
             <div class="tracker-grid" id="div11">
-				<div id=div11-parent>
-					<div id="div11-1"> </div>
-					<div id="div11-2"> </div>
-					<div id="div11-3"> </div>
-					<div id="div11-4"> </div>
-					<div id="div11-5"> </div>
-				</div>
-			</div>
+                <div id=div11-parent>
+                    <div id="div11-1"> </div>
+                    <div id="div11-2"> </div>
+                    <div id="div11-3"> </div>
+                    <div id="div11-4"> </div>
+                    <div id="div11-5"> </div>
+                </div>
+            </div>
             <div class="tracker-grid" id="div12">
                 <p id="time-text">Tracking Time:</p>
                 <p id="timer"></p>
             </div>
             <div class="tracker-grid" id="div13">
-				<img id="grid" src="img/grid.png" alt="grid">
-				<img id="ship" src="img/ship.png" alt="ship">
-			</div>
+                <img id="grid" src="img/grid.png" alt="grid">
+                <img id="ship" src="img/ship.png" alt="ship">
+            </div>
             <div class="tracker-grid" id="div14">
-				<h2>System Information:</h2>
-				<p>// Threat Class: <em id="threat">Euclid</em></p>
-				<p>// Temperature >> &#9 <em id="temp">5&#176 C</em></p>
-				<p>// Energy Signature >> <em id="energy">Fusion Core</em></p>
-				<p>// Life Signs >> Unknown</p>
-				<p id="weapons"><< Weapon Systems Detected >></p>
+                <h2>System Information:</h2>
+                <p>// Threat Class: <em id="threat">Euclid</em></p>
+                <p>// Temperature >> &#9 <em id="temp">5&#176 C</em></p>
+                <p>// Energy Signature >> <em id="energy">Fusion Core</em></p>
+                <p>// Life Signs >> Unknown</p>
+                <p id="weapons">
+                    << Weapon Systems Detected>></p>
 
-			</div>
+            </div>
         </div>
 
     </div>
