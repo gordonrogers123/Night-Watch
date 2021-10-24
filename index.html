@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://use.typekit.net/nbf7xef.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://kit.fontawesome.com/4e854f99b8.js" crossorigin="anonymous"></script>
     <script src=script.js></script>
     <title>The Night Watch</title>
 </head>
@@ -20,15 +20,15 @@
             <img src="img/header.png" alt="UFO logo">
         </div>
 
-        </div class="nav-bar">
+        </div class="nav-bar" id="navbar">
         <nav id="nav-bar">
             <div class="nav-icon">
                 <!-- "Hamburger menu" / "Bar icon" to toggle the navigation links -->
                 <a href="javascript:void(0);" class="icon" onclick="navExpand()">
-                    <i class="fa fa-bars"></i>
+                    <i class="fas fa-bars" id="bars"></i>
                 </a>
             </div>
-            <ul id="nav-link-list" class="flex">
+            <ul id="nav-link-list">
                 <li class="nav-link" onclick="window.location.href='news.html'">
                     <a href="news.html"></a>Latest News</li>
                 <li class="nav-link" onclick="window.location.href='historical.html'">
