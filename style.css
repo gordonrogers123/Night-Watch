@@ -52,6 +52,7 @@ nav>ul {
     padding-left: 1em;
     margin-top: auto;
     font-family: lithos-pro, sans-serif;
+    text-shadow: .2vw .2vw .5vw #1b1b19;
     font-weight: 900;
     font-style: normal;
     font-size: 1.8vw;
@@ -208,7 +209,7 @@ nav>ul {
     color: #ffffff;
     text-shadow: .1em .1em #282725;
     text-align: center;
-    font-size: 1.2vw;
+    font-size: 2vw;
     background-color: gray;
     background-size: contain;
     padding: 0.5em;
@@ -336,7 +337,7 @@ nav>ul {
     color: #ffffff;
     text-shadow: .1em .1em #282725;
     text-align: center;
-    font-size: 1.2vw;
+    font-size: 2vw;
     background-color: gray;
     background-size: contain;
     padding: 0.5em;
@@ -1227,11 +1228,21 @@ nav>ul {
 
 /** Reporting Form Style**/
 
-form {
-    margin: 0vw 10vw;
+.form {
+    margin: 0vw 15vw 0vw 15vw;
     border-style: none solid;
-    padding: 0 5vw;
+    padding: 0 5vw 0 5vw;
     border-color: white;
+    align-content: center;
+}
+
+#form-title {
+    font-family: muli, sans-serif;
+    font-size: 2.5vw;
+    text-align: center;
+    text-shadow: .2vw .2vw .5vw black;
+    color: white;
+    margin-bottom: 4vw;
 }
 
 form>label {
@@ -1254,11 +1265,13 @@ textarea {
 }
 
 input[type=submit] {
+    font-family: muli, sans-serif;
+    font-size: 1.2vw;
     background-color: greenyellow;
     color: #282725;
-    padding: 12px 20px;
+    padding: 1vw 2vw;
     border: none;
-    border-radius: 4px;
+    border-radius: .5vw;
     cursor: pointer;
 }
 
@@ -1271,8 +1284,6 @@ input[type=submit]:hover {
     background-color: #282725;
     padding: 20px;
 }
-
-#form-title {}
 
 
 /**Media box for screens < 800px**/
