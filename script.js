@@ -38,6 +38,8 @@ var x = setInterval(function() {
 }, 1000);
 
 
+
+
 // When the user scrolls the page, execute myFunction
 window.onscroll = function() { myFunction() };
 
