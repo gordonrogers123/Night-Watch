@@ -1240,7 +1240,7 @@ nav>ul {
     font-family: muli, sans-serif;
     font-size: 2.5vw;
     text-align: center;
-    text-shadow: .2vw .2vw .5vw black;
+    text-shadow: .2vw .2vw .5vw #1b1b19;
     color: white;
     margin-bottom: 4vw;
 }
