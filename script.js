@@ -36,23 +36,3 @@ var x = setInterval(function() {
     document.getElementById("timer").innerHTML = days + "d : " + hours + "h : " +
         minutes + "m : " + seconds + "s";
 }, 1000);
-
-
-
-// load more function referenced and modified from https://www.markuptag.com/javascript-load-more-content-on-click-button/
-const loadmore = document.getElementById('#loadmore');
-let currentItems = 2;
-loadmore.addEventListener('click', (e) => {
-    const elementList = [...document.querySelectorAll('.blog-entry-list .blog-entry')];
-    for (let i = currentItems; i < currentItems + 2; i++) {
-        if (elementList[i]) {
-            elementList[i].style.display = 'block';
-        }
-    }
-    currentItems += 2;
-
-    // Load more button will be hidden after list fully loaded
-    if (currentItems >= elementList.length) {
-        event.target.style.display = 'none';
-    }
-})
