@@ -52,17 +52,18 @@
         <div class="container">
             <form class="form" action="">
                 <h2 id="form-title">UFO Sighting Reporting Form</h2>
-                <label for="fname">Name</label>
-                <input type="text" id="fname" name="firstname" placeholder="Your name...">
-
-                <label class="control-label">Email</label>
-                <input type="text" id="email" name="email" placeholder="Your email...">
-
-                <label for="city">City</label>
-                <input type="text" id="city" name="city" placeholder="City...">
-
-                <label for="state">State</label>
-                <select id="state" name="state" placeholder="State...">
+                <label for="fname">Name</label> <br>
+                <input type="text" id="fname" name="firstname" placeholder="Your name..." required>
+                <br>
+                <label class="control-label">Email</label> <br>
+                <input type="email" id="email" name="email" placeholder="Your email..." required>
+                <br>
+                <label for="city">City</label> <br>
+                <input type="text" id="city" name="city" placeholder="City..." required>
+                <br>
+                <label for="state">State</label> <br>
+                <select id="state" name="state" placeholder="State..." required>
+                  <option value="--">--</option>
                   <option value="AL">AL</option>
                   <option value="AK">AK</option>
                   <option value="AR">AR</option>
@@ -117,13 +118,13 @@
                 </select>
 
                 <label for="date">Date of Sighting</label><br><br>
-                <input type="date" name="date" id="date">
+                <input type="date" name="date" id="date" required>
                 <br><br>
                 <label for="time">Time of Sighting</label><br><br>
-                <input type="time" name="time" id="time">
+                <input type="time" name="time" id="time" required>
                 <br><br>
                 <label for="subject">Description:</label>
-                <textarea id="subject" name="subject" placeholder="Describe what you saw..." style="height:200px"></textarea>
+                <textarea id="subject" name="subject" placeholder="Describe what you saw..." style="height:200px" required></textarea>
 
                 <input type="submit" value="Submit" id="submit">
 
