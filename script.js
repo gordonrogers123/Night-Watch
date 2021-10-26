@@ -1,4 +1,4 @@
-/* Toggle between showing and hiding the navigation menu links when the user clicks on the hamburger menu / bar icon */
+// Toggle showing and hiding the navigation menu when the user clicks on the bars/X icon
 function navExpand() {
     var x = document.getElementById("nav-link-list");
     var y = document.getElementById("bars");
@@ -39,21 +39,20 @@ var x = setInterval(function() {
 
 
 
-
-// When the user scrolls the page, execute myFunction
-window.onscroll = function() { myFunction() };
-
-// Get the navbar
-var navbar = document.getElementsById("nav-bar");
-
-// Get the offset position of the navbar
-var sticky = navbar.offsetTop;
-
-// Add the sticky class to the navbar when you reach its scroll position. Remove "sticky" when you leave the scroll position
-function myFunction() {
-    if (window.pageYOffset >= sticky) {
-        navbar.classList.add("sticky")
-    } else {
-        navbar.classList.remove("sticky");
+// load more function referenced and modified from https://www.markuptag.com/javascript-load-more-content-on-click-button/
+const loadmore = document.getElementById('#loadmore');
+let currentItems = 2;
+loadmore.addEventListener('click', (e) => {
+    const elementList = [...document.querySelectorAll('.blog-entry-list .blog-entry')];
+    for (let i = currentItems; i < currentItems + 2; i++) {
+        if (elementList[i]) {
+            elementList[i].style.display = 'block';
+        }
     }
-}
+    currentItems += 2;
+
+    // Load more button will be hidden after list fully loaded
+    if (currentItems >= elementList.length) {
+        event.target.style.display = 'none';
+    }
+})
