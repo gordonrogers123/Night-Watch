@@ -1393,7 +1393,7 @@ input[type=submit]:hover {
     }
     #blog-entries {
         margin-left: 2rem;
-        margin-right: 2rem;
+        margin-right: 1rem;
         flex: 3;
         border-style: none none none none;
     }
