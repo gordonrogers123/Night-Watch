@@ -45,14 +45,37 @@
         </div>
     </header>
 
+
+    <?php
+    // (A) PAGE INIT
+    // (A1) LOAD LIBRARY + SET PAGE ID
+    // GIVE EVERY PAGE A "UNIQUE ID"
+    // OR JUST USE "1" FOR A SINGLE GUESTBOOK FOR THE ENTIRE SITE
+    require "core.php";
+    $pid = 1;
+
+    // (A2) SAVE GUEST BOOK ENTRY
+    if (isset($_POST['name'])) {
+      if ($_GB->save($pid, $_POST['email'], $_POST['name'], $_POST['comment'])) {
+        echo "<div>Guest Book Entry Saved</div>";
+      } else {
+        echo "<div>$_GB->error</div>";
+      }
+    }
+
+    // (A3) GET GUEST BOOK ENTRIES
+    $entries = $_GB->get($pid);
+    ?>
+
+
     <!--Body of Website-->
     <div class="main-content">
 
         <!--Reporting Section-->
         <div class="container">
-            <form class="form" action="">
+            <form class="form" method="post" target="_self" id="gb-form">
                 <h2 id="form-title">UFO Sighting Reporting Form</h2>
-                <label for="fname">Name</label> <br>
+                <label for="name">Name</label> <br>
                 <input type="text" id="fname" name="firstname" placeholder="Your name..." required>
                 <br>
                 <label class="control-label">Email</label> <br>

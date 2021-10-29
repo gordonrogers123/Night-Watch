@@ -103,6 +103,21 @@
             <h2 class="blog-header">List of Sightings Reported to Night Watch</h2>
             <div>
 
+
+            <!-- (B) GUEST BOOK ENTRIES -->
+            <div id="gb-entries">
+            <?php if (count($entries)>0) { foreach ($entries as $e) { ?>
+            <div class="gb-row">
+              <div class="gb-datetime"><?=$e['datetime']?></div>
+              <div class="gb-name">
+                <span class="gb-name-a"><?=$e['name']?></span>
+                <span class="gb-name-b">signed:</span>
+              </div>
+              <div class="gb-comment"><?=$e['comment']?></div>
+            </div>
+            <?php }} ?></div>
+
+
             </div>
             <div class="blog-footer">
                 <h3 class="blog-footer-text">More Sightings</h3>
