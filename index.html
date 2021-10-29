@@ -36,9 +36,9 @@
                     <a href="historical.html"></a>Historical Events</li>
                 <li class="nav-link" onclick="window.location.href='tracker.html'">
                     <a href="tracker.html"></a>UFO Tracker</li>
-                <li class="nav-link" onclick="window.location.href='reporting.html'">
+                <li class="nav-link" onclick="window.location.href='reporting.php'">
                     <a href="reporting.php"></a>Report a Sighting</li>
-                <li class="nav-link" onclick="window.location.href='reporting-list.html'">
+                <li class="nav-link" onclick="window.location.href='reporting-list.php'">
                     <a href="reporting-list.php"></a>List of Sightings</li>
             </ul>
         </nav>
