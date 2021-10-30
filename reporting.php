@@ -24,7 +24,7 @@
         </div class="nav-bar">
         <nav id="nav-bar">
             <div class="nav-icon">
-                <!-- "Hamburger menu" / "Bar icon" to toggle the navigation links -->
+                <!--toggle navigation links-->
                 <a href="javascript:void(0);" class="icon" onclick="navExpand()">
                     <i class="fas fa-bars" id="bars"></i>
                 </a>
@@ -47,110 +47,103 @@
 
 
     <?php
-    // (A) PAGE INIT
-    // (A1) LOAD LIBRARY + SET PAGE ID
-    // GIVE EVERY PAGE A "UNIQUE ID"
-    // OR JUST USE "1" FOR A SINGLE GUESTBOOK FOR THE ENTIRE SITE
+
+    // variable for emailing the new form submission for review
+    $name = $_POST['name'];
+    $email = $_POST['email'];
+    $comment = $_POST['comment'];
+
+    // PHP "Guestbook" aka UFO Reporting form and display has been referenced and modified from:
+    // https://code-boxx.com/simple-php-guest-book/
     require "core.php";
     $pid = 1;
 
-    // (A2) SAVE GUEST BOOK ENTRY
+    // saves the reporting form entry
     if (isset($_POST['name'])) {
-      if ($_GB->save($pid, $_POST['email'], $_POST['name'], $_POST['comment'])) {
-        echo "<div>Guest Book Entry Saved</div>";
+      if ($_GB->save($pid, $_POST['email'], $_POST['name'], $_POST['city'], $_POST['state'], $_POST['comment'])) {
       } else {
         echo "<div>$_GB->error</div>";
       }
     }
-
-    // (A3) GET GUEST BOOK ENTRIES
-    $entries = $_GB->get($pid);
     ?>
-
 
     <!--Body of Website-->
     <div class="main-content">
 
         <!--Reporting Section-->
         <div class="container">
-            <form class="form" method="post" target="_self" id="gb-form">
-                <h2 id="form-title">UFO Sighting Reporting Form</h2>
-                <label for="name">Name</label> <br>
-                <input type="text" id="fname" name="firstname" placeholder="Your name..." required>
-                <br>
-                <label class="control-label">Email</label> <br>
-                <input type="email" id="email" name="email" placeholder="Your email..." required>
-                <br>
-                <label for="city">City</label> <br>
-                <input type="text" id="city" name="city" placeholder="City..." required>
-                <br>
-                <label for="state">State</label> <br>
-                <select id="state" name="state" placeholder="State..." required>
-                  <option value="--">--</option>
-                  <option value="AL">AL</option>
-                  <option value="AK">AK</option>
-                  <option value="AR">AR</option>
-                  <option value="AZ">AZ</option>
-                  <option value="CA">CA</option>
-                  <option value="CO">CO</option>
-                  <option value="CT">CT</option>
-                  <option value="DC">DC</option>
-                  <option value="DE">DE</option>
-                  <option value="FL">FL</option>
-                  <option value="GA">GA</option>
-                  <option value="HI">HI</option>
-                  <option value="IA">IA</option>
-                  <option value="ID">ID</option>
-                  <option value="IL">IL</option>
-                  <option value="IN">IN</option>
-                  <option value="KS">KS</option>
-                  <option value="KY">KY</option>
-                  <option value="LA">LA</option>
-                  <option value="MA">MA</option>
-                  <option value="MD">MD</option>
-                  <option value="ME">ME</option>
-                  <option value="MI">MI</option>
-                  <option value="MN">MN</option>
-                  <option value="MO">MO</option>
-                  <option value="MS">MS</option>
-                  <option value="MT">MT</option>
-                  <option value="NC">NC</option>
-                  <option value="NE">NE</option>
-                  <option value="NH">NH</option>
-                  <option value="NJ">NJ</option>
-                  <option value="NM">NM</option>
-                  <option value="NV">NV</option>
-                  <option value="NY">NY</option>
-                  <option value="ND">ND</option>
-                  <option value="OH">OH</option>
-                  <option value="OK">OK</option>
-                  <option value="OR">OR</option>
-                  <option value="PA">PA</option>
-                  <option value="RI">RI</option>
-                  <option value="SC">SC</option>
-                  <option value="SD">SD</option>
-                  <option value="TN">TN</option>
-                  <option value="TX">TX</option>
-                  <option value="UT">UT</option>
-                  <option value="VT">VT</option>
-                  <option value="VA">VA</option>
-                  <option value="WA">WA</option>
-                  <option value="WI">WI</option>
-                  <option value="WV">WV</option>
-                  <option value="WY">WY</option>
-                </select>
+            <form class="form" id="gb-form" method="post" target="_self" action="form-to-email.php">
+              <h2 id="form-title">UFO Sighting Reporting Form</h2>
 
-                <label for="date">Date of Sighting</label><br><br>
-                <input type="date" name="date" id="date" required>
-                <br><br>
-                <label for="time">Time of Sighting</label><br><br>
-                <input type="time" name="time" id="time" required>
-                <br><br>
-                <label for="subject">Description:</label>
-                <textarea id="subject" name="subject" placeholder="Describe what you saw..." style="height:200px" required></textarea>
+              <label for="name">Name:</label>
+              <input type="text" name="name" placeholder="Name..." required/>
 
-                <input type="submit" value="Submit" id="submit">
+              <label for="email">Email:</label>
+              <input type="email" name="email" placeholder="Email..." required/>
 
+              <label for="city">City:</label>
+              <input type="text" name="city" placeholder="City..." required/>
+
+              <label for="state">State:</label> <br>
+              <select id="state" name="state" placeholder="State..." required>
+                <option value="--">--</option>
+                <option value="AL">AL</option>
+                <option value="AK">AK</option>
+                <option value="AR">AR</option>
+                <option value="AZ">AZ</option>
+                <option value="CA">CA</option>
+                <option value="CO">CO</option>
+                <option value="CT">CT</option>
+                <option value="DC">DC</option>
+                <option value="DE">DE</option>
+                <option value="FL">FL</option>
+                <option value="GA">GA</option>
+                <option value="HI">HI</option>
+                <option value="IA">IA</option>
+                <option value="ID">ID</option>
+                <option value="IL">IL</option>
+                <option value="IN">IN</option>
+                <option value="KS">KS</option>
+                <option value="KY">KY</option>
+                <option value="LA">LA</option>
+                <option value="MA">MA</option>
+                <option value="MD">MD</option>
+                <option value="ME">ME</option>
+                <option value="MI">MI</option>
+                <option value="MN">MN</option>
+                <option value="MO">MO</option>
+                <option value="MS">MS</option>
+                <option value="MT">MT</option>
+                <option value="NC">NC</option>
+                <option value="NE">NE</option>
+                <option value="NH">NH</option>
+                <option value="NJ">NJ</option>
+                <option value="NM">NM</option>
+                <option value="NV">NV</option>
+                <option value="NY">NY</option>
+                <option value="ND">ND</option>
+                <option value="OH">OH</option>
+                <option value="OK">OK</option>
+                <option value="OR">OR</option>
+                <option value="PA">PA</option>
+                <option value="RI">RI</option>
+                <option value="SC">SC</option>
+                <option value="SD">SD</option>
+                <option value="TN">TN</option>
+                <option value="TX">TX</option>
+                <option value="UT">UT</option>
+                <option value="VT">VT</option>
+                <option value="VA">VA</option>
+                <option value="WA">WA</option>
+                <option value="WI">WI</option>
+                <option value="WV">WV</option>
+                <option value="WY">WY</option>
+              </select>
+              
+              <label for="comment">Description:</label>
+              <textarea name="comment" placeholder="Describe what you saw..." required></textarea>
+
+              <input type="submit" value="Report Sighting"/>
             </form>
         </div>
 

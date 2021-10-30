@@ -1351,6 +1351,25 @@ input[type=submit]:hover {
 }
 
 
+/**Reporting List Styling**/
+
+#entries {
+    margin: 1vw;
+}
+
+#entry {
+    justify-content: center;
+    margin: 2vw;
+    padding-top: 4vw;
+    font-family: muli, sans-serif;
+    font-size: large;
+    font-weight: 400;
+    line-height: 1.5;
+    color: white;
+    border-style: dashed none dashed none;
+}
+
+
 /**Media box for screens < 800px**/
 
 @media only screen and (max-width: 800px) {

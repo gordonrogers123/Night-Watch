@@ -14,6 +14,17 @@
 </head>
 
 <body>
+    <?php
+    // (A) PAGE INIT
+    // (A1) LOAD LIBRARY + SET PAGE ID
+    // GIVE EVERY PAGE A "UNIQUE ID"
+    // OR JUST USE "1" FOR A SINGLE GUESTBOOK FOR THE ENTIRE SITE
+    require "core.php";
+    $pid = 1;
+
+    // (A3) GET GUEST BOOK ENTRIES
+    $entries = $_GB->get($pid);
+    ?>
     <!--Header-->
     <header>
 
@@ -98,27 +109,26 @@
             </div>
         </div>
 
-        <!--Blog Section-->
+        <!--Reported Sightings Section-->
         <div class="column" id="blog-entries">
             <h2 class="blog-header">List of Sightings Reported to Night Watch</h2>
-            <div>
 
-
-            <!-- (B) GUEST BOOK ENTRIES -->
-            <div id="gb-entries">
-            <?php if (count($entries)>0) { foreach ($entries as $e) { ?>
-            <div class="gb-row">
-              <div class="gb-datetime"><?=$e['datetime']?></div>
-              <div class="gb-name">
-                <span class="gb-name-a"><?=$e['name']?></span>
-                <span class="gb-name-b">signed:</span>
+              <!-- (B) GUEST BOOK ENTRIES -->
+              <div id="entries">
+              <?php 
+              // PHP "Guestbook" aka UFO Reporting Form and display has been referenced and modified from:
+              // https://code-boxx.com/simple-php-guest-book/
+              if (count($entries)>0) { foreach ($entries as $e) { ?>
+              <div id="entry">
+                <div>On <?=$e['datetime']?></div>
+                <span><?=$e['name']?> from </span>
+                <span><?=$e['city']?>, <?=$e['state']?></span>
+                <span>reported:</span>
+                <div><?=$e['comment']?></div>
+                <br><br>
               </div>
-              <div class="gb-comment"><?=$e['comment']?></div>
-            </div>
-            <?php }} ?></div>
+              <?php }} ?></div>
 
-
-            </div>
             <div class="blog-footer">
                 <h3 class="blog-footer-text">More Sightings</h3>
             </div>

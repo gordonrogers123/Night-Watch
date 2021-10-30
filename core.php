@@ -1,6 +1,8 @@
 <?php
+// PHP "Guestbook" aka UFO Reporting form and display has been referenced and modified from:
+// https://code-boxx.com/simple-php-guest-book/
 // (A) GUEST BOOK CLASS
-class GuestBook {
+class ReportingForm {
   // (A1) CONSTRUCTOR - CONNECT TO DATABASE
   private $pdo;
   private $stmt;
@@ -25,20 +27,20 @@ class GuestBook {
   // (A3) GET GUEST BOOK ENTRIES
   function get ($pid) {
     $this->stmt = $this->pdo->prepare(
-      "SELECT * FROM `guestbook` WHERE `post_id`=? ORDER BY `datetime` DESC"
+      "SELECT * FROM `reporting_form` WHERE `post_id`=? ORDER BY `datetime` DESC"
     );
     $this->stmt->execute([$pid]);
     return $this->stmt->fetchall(PDO::FETCH_NAMED);
   }
 
   // (A4) SAVE GUEST BOOK ENTRY
-  function save($pid, $email, $name, $comment, $date=null) {
+  function save($pid, $email, $name, $city, $state, $comment, $date=null) {
     if ($date==null) { $date = date("Y-m-d H:i:s"); }
     try {
       $this->stmt = $this->pdo->prepare(
-        "REPLACE INTO `guestbook` (`post_id`, `email`, `name`, `comment`, `datetime`) VALUES (?,?,?,?,?)"
+        "REPLACE INTO `reporting_form` (`post_id`, `email`, `name`,`city`, `state`, `comment`, `datetime`) VALUES (?,?,?,?,?,?,?)"
       );
-      $this->stmt->execute([$pid, $email, $name, $comment, $date]);
+      $this->stmt->execute([$pid, $email, $name, $city, $state, $comment, $date]);
     } catch (Exception $ex) {
       $this->error = $ex->getMessage();
       return false;
@@ -53,7 +55,7 @@ define('DB_HOST', 'localhost');
 define('DB_NAME', 'test');
 define('DB_CHARSET', 'utf8');
 define('DB_USER', 'root');
-define('DB_PASSWORD', '');
+define('DB_PASSWORD', '68VMyTO6LVca');
 
 // (C) NEW GUEST BOOK OBJECT
-$_GB = new GuestBook();
+$_GB = new ReportingForm();
