@@ -49,13 +49,13 @@ nav>ul {
     flex-direction: row;
     justify-content: space-evenly;
     justify-items: left;
-    padding-left: 1em;
     margin-top: auto;
+    padding-left: 0em;
     font-family: lithos-pro, sans-serif;
     text-shadow: .2vw .2vw .5vw #1b1b19;
     font-weight: 900;
     font-style: normal;
-    font-size: 1.8vw;
+    font-size: 1.6vw;
     color: #ffffff;
 }
 
@@ -138,11 +138,10 @@ nav>ul {
 #news-ticker-news {
     margin-left: 2rem;
     margin-right: 2rem;
+    padding: 1rem;
     padding-left: 0;
     padding-right: 0;
     flex: 1;
-    border-style: none solid none solid;
-    border-color: #ffffff;
 }
 
 .news-header {
@@ -239,6 +238,13 @@ nav>ul {
     flex: 3;
     border-style: none solid none solid;
     border-color: #ffffff;
+}
+
+#blog-entries-blog {
+    margin-left: 2rem;
+    margin-right: 2rem;
+    padding: 1rem 0;
+    flex: 3;
 }
 
 #blog-entries-full {

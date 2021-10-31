@@ -30,6 +30,8 @@
                 </a>
             </div>
             <ul id="nav-link-list">
+                <li class="nav-link" onclick="window.location.href='blog.html'">
+                    <a href="blog.html"></a>Blog Posts</li>
                 <li class="nav-link" onclick="window.location.href='news.html'">
                     <a href="news.html"></a>Latest News</li>
                 <li class="nav-link" onclick="window.location.href='historical.html'">
@@ -47,12 +49,6 @@
 
 
     <?php
-
-    // variable for emailing the new form submission for review
-    $name = $_POST['name'];
-    $email = $_POST['email'];
-    $comment = $_POST['comment'];
-
     // PHP "Guestbook" aka UFO Reporting form and display has been referenced and modified from:
     // https://code-boxx.com/simple-php-guest-book/
     require "core.php";
@@ -67,12 +63,14 @@
     }
     ?>
 
+
     <!--Body of Website-->
     <div class="main-content">
 
         <!--Reporting Section-->
         <div class="container">
-            <form class="form" id="gb-form" method="post" target="_self" action="form-to-email.php">
+            <!-- (C) ADD NEW ENTRY -->
+            <form class="form" id="gb-form" method="post" target="_self">
               <h2 id="form-title">UFO Sighting Reporting Form</h2>
 
               <label for="name">Name:</label>
@@ -142,7 +140,6 @@
               
               <label for="comment">Description:</label>
               <textarea name="comment" placeholder="Describe what you saw..." required></textarea>
-
               <input type="submit" value="Report Sighting"/>
             </form>
         </div>
