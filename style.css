@@ -1387,6 +1387,7 @@ input[type=submit]:hover {
         align-self: center;
         align-content: center;
         text-align: center;
+        margin: 2vw 0;
     }
     nav>ul {
         display: flex;
