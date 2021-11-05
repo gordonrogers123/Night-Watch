@@ -16,12 +16,10 @@
 <body>
     <!--Header-->
     <header>
-
         <div class="logo" onclick="window.location.href='index.html'">
             <img src="img/header.png" alt="UFO logo">
         </div>
-
-        </div class="nav-bar" id="navbar">
+        </div class="nav-bar">
         <nav id="nav-bar">
             <div class="nav-icon">
                 <!-- "Hamburger menu" / "Bar icon" to toggle the navigation links -->
@@ -49,92 +47,38 @@
 
     <!--Body of Website-->
     <div class="main-content">
-
         <!--News Ticker Sidebar-->
-        <div class="column" id="news-ticker">
-            <h2 class="news-header">News from r/UFO</h1>
+        <div class="column" id="news-ticker-news">
+            <h2 class="news-header">Latest News from the US</h1>
                 <ul class="news-clip-list">
-                    <li class="news-clip">
-                        <h4 class="clip-title">Lorem ipsum</h2>
-            <p class="clip-body">Lorem ipsum dolor sit amet, consectetur adipiscing elit…</p>
-            </li>
-            <li class="news-clip">
-                <h4 class="clip-title">Aliquam porttitor</h2>
-                    <p class="clip-body">Pellentesque diam sem, tempus at dui sed, commodo consequat nisi. Proin sit amet imperdiet sem.…</p>
-            </li>
-            <li class="news-clip">
-                <h4 class="clip-title">Vivamus sed ornare</h2>
-                    <p class="clip-body">Aliquam blandit nunc id ipsum euismod, sed volutpat leo consequat…</p>
-            </li>
-            <li class="news-clip">
-                <h4 class="clip-title">Integer dictum</h2>
-                    <p class="clip-body">Quisque in lectus euismod, molestie nunc nec, egestas ante. Nullam pharetra enim at mauris eleifend ultrices.…</p>
-            </li>
-            <li class="news-clip">
-                <h4 class="clip-title">Lorem ipsum</h2>
-                    <p class="clip-body">Pellentesque sit amet hendrerit nisl. Duis at nisi mauris. Curabitur eget pulvinar nulla. Integer tristique, magna ut cursus lobortis, nunc ipsum mollis augue, quis egestas odio dolor et urna…</p>
-            </li>
-            <li class="news-clip">
-                <h4 class="clip-title">Lorem ipsum</h2>
-                    <p class="clip-body">Quisque purus purus, sollicitudin finibus velit eu, pellentesque vehicula justo. Nunc elementum aliquam elit, sit amet lacinia ipsum egestas ac…</p>
-            </li>
-            <li class="news-clip">
-                <h4 class="clip-title">Lorem ipsum</h2>
-                    <p class="clip-body">Quisque interdum, leo in vehicula pretium, elit dolor iaculis nibh, vel aliquet sem massa vel enim. Nullam mi orci, consequat eu posuere vel, hendrerit eget diam…</p>
-            </li>
-            <li class="news-clip">
-                <h4 class="clip-title">Vivamus sed ornare</h2>
-                    <p class="clip-body">Aliquam blandit nunc id ipsum euismod, sed volutpat leo consequat…</p>
-            </li>
-            <li class="news-clip">
-                <h4 class="clip-title">Integer dictum</h2>
-                    <p class="clip-body">Quisque in lectus euismod, molestie nunc nec, egestas ante. Nullam pharetra enim at mauris eleifend ultrices.…</p>
-            </li>
-            <li class="news-clip">
-                <h4 class="clip-title">Lorem ipsum</h2>
-                    <p class="clip-body">Pellentesque sit amet hendrerit nisl. Duis at nisi mauris. Curabitur eget pulvinar nulla. Integer tristique, magna ut cursus lobortis, nunc ipsum mollis augue, quis egestas odio dolor et urna…</p>
-            </li>
-            </ul>
+                  <?php
+                  libxml_use_internal_errors(true);
+                  $html = "";
+                  $url = "https://www.bing.com/news/search?q=ufos&FORM=HDRSC6&format=rss";
+                  $xml = simplexml_load_file($url);
+                  for($i = 0; $i < 20; $i++){
+                    if ($xml->channel->item[$i] != NULL){
+                      $title =        $xml->channel->item[$i]->title;
+                      $link =         $xml->channel->item[$i]->link;
+                      $pubDate =      $xml->channel->item[$i]->pubDate;
+                      $description =  $xml->channel->item[$i]->description;
+                      $image =        $xml->channel->item[$i]->children('News', true)->Image;
+
+                      $html .= "<div class='news-clip' id='news-clip'>";
+                      $html .= "<a href=$link   class='clip-title'><h3>$title</h3></a>";
+                      $html .= "<p class='clip-date'>$pubDate</p>";
+                      #$html .= "<img class='clip-img' src='$image'>";
+                      $html .= "<p class='clip-body'>$description</p>";
+                      $html .= "</div>";
+                    }
+                  }
+                  echo $html;
+                  ?>
+                </ul>
             <div class="news-footer">
-                <h3 id="news-footer-text" onclick="window.location.href='news.html'">More News</h3>
+                <h3 id="news-footer-text"></h3>
             </div>
         </div>
-
-        <!--Blog Section-->
-        <div class="column" id="blog-entries">
-            <h2 class="blog-header">Latest Blog Entries</h2>
-            <div class="blog-entry-list">
-                <li class="blog-entry">
-                    <h3 class="blog-entry-title">Cras molestie pretium</h3>
-                    <h4 class="blog-timestamp">7/3/2021</h4>
-                    <p class="blog-body">Cras molestie pretium velit, non vulputate quam mollis at. Duis pulvinar sem in ante scelerisque, sit amet bibendum justo iaculis. Curabitur mattis fringilla finibus. Maecenas vitae diam in mi eleifend feugiat. Mauris suscipit mi sit
-                        amet magna viverra varius. Donec placerat elit faucibus velit commodo consectetur.</p>
-                    <img class="blog-img" src="img/dummy.png" alt="">
-                    <p class="blog-spacer"></p>
-                </li>
-                <li class="blog-entry">
-                    <h3 class="blog-entry-title">Cras molestie pretium</h3>
-                    <h4 class="blog-timestamp">6/21/2021</h4>
-                    <p class="blog-body">Cras molestie pretium velit, non vulputate quam mollis at. Duis pulvinar sem in ante scelerisque, sit amet bibendum justo iaculis. Curabitur mattis fringilla finibus. Maecenas vitae diam in mi eleifend feugiat. Mauris suscipit mi sit
-                        amet magna viverra varius. Donec placerat elit faucibus velit commodo consectetur.</p>
-                    <img class="blog-img" src="img/dummy.png" alt="">
-                    <p class="blog-spacer"></p>
-                </li>
-            </div>
-            <div class="blog-footer">
-                <h3 class="blog-footer-text">More Blog Posts</h3>
-                <div class="blog-pagination">
-                    <a href="index.html">&laquo;</a>
-                    <a href="index.html">1</a>
-                    <a href="index-2.html">2</a>
-                    <a href="index-3.html">3</a>
-                    <a href="index-4.html" class="active">4</a>
-                    <a href="index-5.html">5</a>
-                    <a href="index-5.html">&raquo;</a>
-                </div>
-            </div>
-        </div>
-
     </div>
 
     <!--Footer-->
@@ -213,3 +157,4 @@
 </body>
 
 </html>
+
