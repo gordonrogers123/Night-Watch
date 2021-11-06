@@ -13,17 +13,16 @@ function navExpand() {
     }
 }
 
-
-// Set the date we're counting down to
+// Set the date we're counting up to
 var countUpDate = new Date("Oct 19, 2021 15:37:25").getTime();
 
-// Update the count down every 1 second
+// Update the count up every 1 second
 var x = setInterval(function() {
 
     // Get today's date and time
     var now = new Date().getTime();
 
-    // Find the distance between now and the count down date
+    // Find the distance between now and the count up date
     var distance = now - countUpDate;
 
     // Time calculations for days, hours, minutes and seconds
@@ -36,3 +35,19 @@ var x = setInterval(function() {
     document.getElementById("timer").innerHTML = days + "d : " + hours + "h : " +
         minutes + "m : " + seconds + "s";
 }, 1000);
+
+$.getJSON('https://cs361iotspacecraft.azurewebsites.net/api/shipstatus/current', function(data) {
+
+    var text = `
+                <h2>System Information:</h2>
+                <p>// Propulsion Status>> <em id="threat">${data.propulsionSystem.value}</em></p>
+                <p>// Ship Temperature >> &#9 <em id="temp">${data.internalTemperature.value} &#176 C</em></p>
+                <p>// Engine RPM >> <em id="energy">${data.engine_RPM.value}</em></p>
+                <p>// Possible Life Signs >> ${data.engine_Temperature.value}</p>
+                <p id="weapons"><< Weapon Systems Detected>></p>
+              `
+
+
+
+    $("#div14").html(text);
+});
