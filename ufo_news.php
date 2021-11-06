@@ -49,7 +49,7 @@
     <div class="main-content">
         <!--News Ticker Sidebar-->
         <div class="column" id="news-ticker-news">
-            <h2 class="news-header">Latest News from the US</h1>
+            <h2 class="news-header">Latest News from the United States</h1>
                 <ul class="news-clip-list">
                   <?php
                   libxml_use_internal_errors(true);
