@@ -114,7 +114,7 @@ nav>ul {
 .main-content {
     display: flex;
     flex-direction: row;
-    margin: auto -1rem 1rem;
+    margin: auto -2vw 2vw -2vw;
 }
 
 .column {
@@ -555,7 +555,7 @@ nav>ul {
     grid-template-rows: repeat(12, 2.5vw);
     grid-column-gap: 1vw;
     grid-row-gap: 1vw;
-    margin-left: 5.6vw;
+    margin-left: 6.6vw;
     margin-right: 10vw;
     margin-top: 1vw;
 }
@@ -1078,6 +1078,7 @@ nav>ul {
 }
 
 #grid {
+    display: block;
     max-height: 100%;
     z-index: 1;
 }
@@ -1287,11 +1288,12 @@ nav>ul {
 /**Kyle Content Style**/
 
 .kyle-content {
-    margin: 4vw 4vw 1vw;
+    margin: 4vw 2vw 1vw 5vw;
     border-style: solid;
     border-color: white;
     border-radius: 2vw;
     border-width: 0.1vw;
+    overflow-x: hidden;
 }
 
 .kyle-content>h3 {
@@ -1308,23 +1310,7 @@ nav>ul {
     width: 100%;
     height: 28vw;
     border: 0;
-}
-
-.kyle-content>iframe::-webkit-scrollbar {
-    width: .8em;
-}
-
-.kyle-content>iframe::-webkit-scrollbar-track {
-    background-color: #282725;
-    box-shadow: inset 0 0 .2em darkgray;
-}
-
-.kyle-content>iframe::-webkit-scrollbar-thumb {
-    background-color: darkgrey;
-}
-
-.kyle-content>iframe::-webkit-scrollbar-button {
-    background-color: gray;
+    overflow-x: hidden;
 }
 
 
@@ -1485,14 +1471,19 @@ input[type=submit]:hover {
         flex-direction: column-reverse;
     }
     #news-ticker {
-        margin-left: 2rem;
+        margin-left: 0.5rem;
         margin-right: 2rem;
         padding-right: 0;
         flex: 1;
         border-style: none none none none;
     }
+    #blog-entries-blog {
+        margin-left: 1rem;
+        margin-right: 1rem;
+        padding: 1rem;
+        flex: 3;
+    }
     #blog-entries {
-        margin-left: 2rem;
         margin-right: 1rem;
         flex: 3;
         border-style: none none none none;
@@ -1507,6 +1498,9 @@ input[type=submit]:hover {
         margin-bottom: .5em;
         padding: 0.5em;
         background-color: gray;
+    }
+    .blog-entry-list {
+        max-height: 85vw;
     }
     .blog-entry {
         display: inline;
@@ -1553,6 +1547,9 @@ input[type=submit]:hover {
         padding: 0.5em;
         background-color: gray;
     }
+    .news-clip-list {
+        max-height: 125vw;
+    }
     .footer {
         display: flex;
         flex-direction: column;
@@ -1589,6 +1586,17 @@ input[type=submit]:hover {
         font-family: muli, sans-serif;
         font-size: 2.5vw;
         color: white;
+    }
+    .kyle-content {
+        margin: 4vw 3vw 3vw 5vw;
+        border-style: solid;
+        border-color: white;
+        border-radius: 2vw;
+        border-width: 0.1vw;
+        overflow-x: hidden;
+    }
+    #grid {
+        display: block;
     }
 }
 

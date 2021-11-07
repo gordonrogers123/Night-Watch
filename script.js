@@ -36,6 +36,8 @@ var x = setInterval(function() {
         minutes + "m : " + seconds + "s";
 }, 1000);
 
+
+// Display John's Ship data Json data
 $.getJSON('https://cs361iotspacecraft.azurewebsites.net/api/shipstatus/current', function(data) {
 
     var text = `
@@ -46,8 +48,6 @@ $.getJSON('https://cs361iotspacecraft.azurewebsites.net/api/shipstatus/current',
                 <p>// Possible Life Signs >> ${data.engine_Temperature.value}</p>
                 <p id="weapons"><< Weapon Systems Detected>></p>
               `
-
-
 
     $("#div14").html(text);
 });
