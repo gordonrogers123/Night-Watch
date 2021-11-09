@@ -53,18 +53,16 @@ $.getJSON('https://cs361iotspacecraft.azurewebsites.net/api/shipstatus/current',
 });
 
 
-function equalHeights(className) {
-    var findClass = document.getElementsByClassName(className);
-    var tallest = 0;
-    // Loop over matching divs
-    for (i = 0; i < findClass.length; i++) {
-        var ele = findClass[i];
-        var eleHeight = ele.offsetHeight;
-        tallest = (eleHeight > tallest ? eleHeight : tallest); /* look up ternary operator if you dont know what this is */
-    }
-    for (i = 0; i < findClass.length; i++) {
-        findClass[i].style.height = tallest + "px";
-    }
-}
 
-equalHeights("column");
+
+// zipcode to gps
+function getZip() {
+    var zipcode = document.getElementById("userInput").value;
+    var JSONURL = "https://service-361.herokuapp.com/locate/" + zipcode
+    var getJSON = $.getJSON(JSONURL, function() {
+        var text = "<p id='latitude'>Latitude: " + getJSON.responseJSON[zipcode].lat + "</p><p id='longitude'>Longitude: " + getJSON.responseJSON[zipcode].lng + "</p>"
+        var lat = getJSON.responseJSON[zipcode].lat
+        var lng = getJSON.responseJSON[zipcode].lng
+        $("#gps-output").html(text);
+    })
+};

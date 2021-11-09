@@ -1633,6 +1633,20 @@ nav>ul {
     overflow-x: hidden;
 }
 
+.zipcode-form {
+    margin: 5vw;
+    max-width: 30%;
+}
+
+#gps-output {
+    font-family: lithos-pro, sans-serif;
+    font-weight: 700;
+    font-style: normal;
+    font-size: 2vw;
+    text-align: center;
+    color: #ffffff;
+}
+
 
 /** Reporting Form Style**/
 
