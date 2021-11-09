@@ -11,6 +11,8 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src=script.js></script>
     <title>The Night Watch</title>
+    <link rel="shortcut icon" type="image/jpg" href="img/favicon.png" />
+
 </head>
 
 <body>
@@ -107,7 +109,7 @@
             </li>
             </ul>
             <div class="news-footer">
-                <h3 id="news-footer-text" onclick="window.location.href='news.html'">More News</h3>
+                <h3 id="news-footer-text" onclick="window.location.href='ufo_news.php'">More News</h3>
             </div>
         </div>
 
@@ -132,7 +134,7 @@
               <?php }} ?></div>
 
             <div class="blog-footer">
-                <h3 class="blog-footer-text">More Sightings</h3>
+                <h3 class="blog-footer-text"></h3>
             </div>
         </div>
 

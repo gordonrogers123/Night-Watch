@@ -11,6 +11,8 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src=script.js></script>
     <title>The Night Watch</title>
+    <link rel="shortcut icon" type="image/jpg" href="img/favicon.png" />
+
 </head>
 
 <body>
