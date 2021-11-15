@@ -10,7 +10,7 @@
     <script src="https://kit.fontawesome.com/4e854f99b8.js" crossorigin="anonymous"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-    <script src=script.js></script>
+    <script src=test.js></script>
     <title>The Night Watch</title>
     <link rel="shortcut icon" type="image/jpg" href="img/favicon.png" />
 
@@ -50,19 +50,21 @@
         </div>
     </header>
 
-
     <!--Kyle Content-->
-
-
     <div class="zipcode-form">
         <form id="form" onsubmit="return false;">
-            <input type="text" id="userInput" />
+            <input type="text" id="userInput" placeholder="Zipcode..." /><br>
             <input type="submit" onclick="getZip();" />
         </form>
     </div>
     <div id="gps-output">
     </div>
 
+    <!--Mason Content-->
+    <div class="GPS">
+        <div class="lat"></div>
+        <div class="long"></div>
+    </div>
     <!--Footer-->
     <footer class="footer">
         <div class="flip-card">

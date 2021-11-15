@@ -186,6 +186,32 @@ nav>ul {
     background-color: gray;
 }
 
+.news-clip-list-bing {
+    max-height: 55.5vw;
+    text-align: left;
+    padding: 1rem;
+    margin: 0;
+    overflow: scroll;
+    overflow-x: hidden;
+}
+
+.news-clip-list-bing::-webkit-scrollbar {
+    width: .8em;
+}
+
+.news-clip-list-bing::-webkit-scrollbar-track {
+    background-color: #282725;
+    box-shadow: inset 0 0 .2em darkgray;
+}
+
+.news-clip-list-bing::-webkit-scrollbar-thumb {
+    background-color: darkgrey;
+}
+
+.news-clip-list-bing::-webkit-scrollbar-button {
+    background-color: gray;
+}
+
 #news-clip {
     display: grid;
     grid-template-columns: .5fr repeat(4, 1fr);
@@ -203,12 +229,6 @@ nav>ul {
     font-family: lithos-pro, sans-serif;
     font-style: normal;
     color: #ffffff;
-}
-
-.clip-title:hover {
-    color: greenyellow;
-    cursor: pointer;
-    transition: 1s;
 }
 
 .clip-body {
@@ -258,6 +278,15 @@ nav>ul {
 .news-footer:hover {
     color: greenyellow;
     cursor: pointer;
+    transition: 1s;
+}
+
+.news-links {
+    color: white;
+}
+
+.news-links:hover {
+    color: greenyellow;
     transition: 1s;
 }
 
@@ -1893,6 +1922,9 @@ input[type=submit]:hover {
         background-color: gray;
     }
     .news-clip-list {
+        max-height: 125vw;
+    }
+    .news-clip-list-bing {
         max-height: 125vw;
     }
     .clip-title {
