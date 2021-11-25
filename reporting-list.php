@@ -17,16 +17,13 @@
 
 <body>
     <?php
-    // (A) PAGE INIT
-    // (A1) LOAD LIBRARY + SET PAGE ID
-    // GIVE EVERY PAGE A "UNIQUE ID"
-    // OR JUST USE "1" FOR A SINGLE GUESTBOOK FOR THE ENTIRE SITE
     require "core.php";
     $pid = 1;
 
-    // (A3) GET GUEST BOOK ENTRIES
+    // GET GUEST BOOK ENTRIES
     $entries = $_GB->get($pid);
     ?>
+
     <!--Header-->
     <header>
 
@@ -78,7 +75,7 @@
         <div class="column" id="blog-entries">
             <h2 class="blog-header">List of Sightings Reported to Night Watch</h2>
 
-              <!-- (B) GUEST BOOK ENTRIES -->
+              <!-- GUEST BOOK ENTRIES -->
               <div id="entries">
               <?php 
               // PHP "Guestbook" aka UFO Reporting Form and display has been referenced and modified from:

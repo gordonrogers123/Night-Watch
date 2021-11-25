@@ -13,7 +13,8 @@ function navExpand() {
     }
 }
 
-// Set the date we're counting up to
+// Tracking time for UFO tracker page
+// Set the date we're counting up from
 var countUpDate = new Date("Oct 19, 2021 15:37:25").getTime();
 
 // Update the count up every 1 second
@@ -52,7 +53,6 @@ $.getJSON('https://cs361iotspacecraft.azurewebsites.net/api/shipstatus/current',
 
     $("#div14").html(text);
 });
-
 
 
 // Display Nick's News
@@ -97,6 +97,7 @@ $.getJSON('https://prawsome-sauce1.herokuapp.com/', function(data) {
               `
     $(".news-clip-list").html(text);
 });
+
 
 // zipcode to gps
 function getZip() {

@@ -1,9 +1,9 @@
 <?php
 // PHP "Guestbook" aka UFO Reporting form and display has been referenced and modified from:
 // https://code-boxx.com/simple-php-guest-book/
-// (A) GUEST BOOK CLASS
+// GUEST BOOK CLASS
 class ReportingForm {
-  // (A1) CONSTRUCTOR - CONNECT TO DATABASE
+  // CONSTRUCTOR - CONNECT TO DATABASE
   private $pdo;
   private $stmt;
   public $error;
@@ -18,13 +18,13 @@ class ReportingForm {
     }
   }
 
-  // (A2) DESTRUCTOR - CLOSE DATABASE CONNECTION
+  // DESTRUCTOR - CLOSE DATABASE CONNECTION
   function __destruct() {
     $this->pdo = null;
     $this->stmt = null;
   }
 
-  // (A3) GET GUEST BOOK ENTRIES
+  // GET GUEST BOOK ENTRIES
   function get ($pid) {
     $this->stmt = $this->pdo->prepare(
       "SELECT * FROM `reporting_form` WHERE `post_id`=? ORDER BY `datetime` DESC"
@@ -33,7 +33,7 @@ class ReportingForm {
     return $this->stmt->fetchall(PDO::FETCH_NAMED);
   }
 
-  // (A4) SAVE GUEST BOOK ENTRY
+  // SAVE GUEST BOOK ENTRY
   function save($pid, $email, $name, $city, $state, $comment, $date=null) {
     if ($date==null) { $date = date("Y-m-d H:i:s"); }
     try {
@@ -49,13 +49,12 @@ class ReportingForm {
   }
 }
 
-// (B) DATABASE SETTINGS
-// ! CHANGE THESE TO YOUR OWN !
+// DATABASE SETTINGS
 define('DB_HOST', 'localhost');
 define('DB_NAME', 'test');
 define('DB_CHARSET', 'utf8');
 define('DB_USER', 'root');
 define('DB_PASSWORD', '68VMyTO6LVca');
 
-// (C) NEW GUEST BOOK OBJECT
+// NEW GUEST BOOK OBJECT
 $_GB = new ReportingForm();

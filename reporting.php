@@ -71,8 +71,8 @@
 
         <!--Reporting Section-->
         <div class="container">
-            <!-- (C) ADD NEW ENTRY -->
-            <form class="form" id="gb-form" method="post" target="_self">
+            <!-- ADD NEW ENTRY -->
+            <form class="form" id="gb-form" method="post" target="_self" action="https://night-watch.us/reporting-list.php">
               <h2 id="form-title">UFO Sighting Reporting Form</h2>
 
               <label for="name">Name:</label>
@@ -142,7 +142,7 @@
               
               <label for="comment">Description:</label>
               <textarea name="comment" placeholder="Describe what you saw..." required></textarea>
-              <input type="submit" value="Report Sighting"/>
+              <input type="submit" value="Report Sighting" id="reportSighting" onclick="reportSighting()"/>
             </form>
         </div>
 
